@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Admin console | vscm</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<style>
+	#current-status-label {
+		font-size: 44px;
+		text-transform: uppercase;
+	}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<a href="#" title="" class="navbar-brand">vscm</a>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7">
+				<div class="panel panel-default">
+					<div class="panel-body text-center">
+						<p><strong>STATUS</strong></p>
+						<span id="current-status-label" class="badge">ON</span>
+					</div>
+					<table id="score-table" class="table table-condensed">
+						<caption></caption>
+						<thead>
+							<tr>
+								<th></th>
+								<th>Room</th>
+								<th>Total Score</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for (var i=0; i<roomsLength; i++) { %>
+							<tr id="vote<%= i %>">
+								<th></th>
+								<td>vote <%= i %></td>
+								<td><span class="badge">0</span></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-sm-5">
+				<form id="room_control" class="" accept-charset="utf-8" role="form">
+					<div class="form-group">
+						<label class="form-label" for="">Select Room</label>
+						<select id="room" name="room" class="form-control">
+							<% for (var i=0; i<roomsLength; i++) { %>
+								<option value="vote<%= i %>">vote <%= i %></option>
+							<% } %>
+						</select>
+					</div>
+					<div class="form-group">
+						<input type="submit" name="" value="Select" class="btn btn-primary btn-block btn-lg" />
+					</div>
+				</form>
+				<hr />
+				<div class="well well-sm text-center">
+					<button type="button" id="off" class="btn btn-default btn-block">OFF</button>
+				</div>
+				<div class="text-right">
+					<button type="button" id="init" class="btn btn-danger btn-sm">INIT</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+$(function() {
+	var value;
+
+	var getHostname = function() {
+		var _url = 'http://127.0.0.1:5150/hostname';
+		// var _url = 'http://192.168.33.72:5150/hostname';
+		var xhr = new XMLHttpRequest;
+		xhr.open('GET', _url, true);
+		xhr.onload = function() {
+			if (xhr.status >= 200 && xhr.status < 400) {
+				var data = xhr.responseText;
+				connectTo(data);
+			} else {
+				console.log('error: speakers data');
+			}
+		};
+		xhr.send();
+	};
+
+	var connectTo = function(hostname) {
+		var socket = io.connect('http://' + hostname);
+		
+		$('#off').on('click', function(event) {
+			setValue($('#room').val(), 'off');
+			socket.emit('status.change', value);
+		});
+		$('#init').on('click', function(event) {
+			if (confirm('Are you sure you want to initialize the data really?')) {
+				$('#room').val('vote0');
+				setValue($('#room').val(), 'init');
+				socket.emit('status.change', value);
+			}
+		});
+		$('#room_control').on('submit', function(event) {
+			event.preventDefault();
+			setValue($('#room').val(), 'on');
+			socket.emit('status.change', value);
+		});
+
+		socket.on('segment', function(data) {
+			updateTable(data);
+		});
+		socket.on('vote.update', function(data) {
+			var rooms = data.rooms;
+			for (var i=0; i<15; i++) {
+				$('#vote' + i).find('.badge').text(rooms['vote' + i]);
+			}
+		});
+
+		setInterval(function() {
+			if (typeof(value) === 'undefined') return;
+			socket.emit('status.change', value);
+		}, 2000);
+	};
+
+	var setValue = function(target, status) {
+		if (typeof (value) === 'undefined') {
+			value = {};
+		}
+		value.vote_target = target,
+		value.vote_status = status;
+	};
+
+	var updateTable = function(data) {
+		$('#current-status-label').text(data.vote_status);
+		$('#score-table tbody').find('tr').find('th').empty();
+		if (data.vote_status !== 'on') return;
+		$('#score-table tbody').find('tr').removeClass('active');
+		var currentRec = $('#' + data.vote_target);
+		currentRec.addClass('active').find('th').append($('<span class="label label-info">').text('ON'));
+	};
+
+	getHostname();
+});
+</script>
+</body>
+</html>
