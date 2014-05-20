@@ -1,0 +1,48 @@
+---
+title: 対戦履歴 | ヤフー vs クラスメソッド
+css: score
+js: score
+---
+
+.display-wrapper
+	.display
+		%header.context.score-header
+			%table
+				%thead
+					%tr
+						%th ヤフー
+						%th ＶＳ
+						%th クラスメソッド
+				%tbody
+					%tr
+						%td
+							%ul#points-yahoo.points.align-left
+								- (1..7).each do |i|
+									%li.icon-like.pull-left{id: "point-yahoo#{i}"}
+							%span#total-votes-yahoo.total-votes 99,999,999
+						%td.align-center{style: 'color: red; vertical-align: bottom;'}<
+							iＯＳ
+							%br
+							炎の７番勝負
+						%td
+							%ul#points-cm.points.text-right
+								- (1..7).each do |i|
+									%li.icon-like.pull-right{id: "point-cm#{i}"}
+							%span#total-votes-cm.total-votes.align-right 99,999,999
+				
+		.score-wrapper
+			.team-icon.yahoo
+			.team-icon.cm
+			%table.table-score.pull-left
+				%tbody
+					- data.score.sessions.each.with_index(1) do |session, i|
+						%tr{id: "session#{i}"}
+							%td.thumbnail
+								= image_tag "speakers/#{session[:challenger]}"
+							%td.score.yahoo= session[:scores][:yahoo]
+							%td.title= session[:title]
+							%td.score.cm= session[:scores][:cm]
+							%td.thumbnail
+								= image_tag "speakers/#{session[:classmethod]}"
+
+	%p.display-label classmethod

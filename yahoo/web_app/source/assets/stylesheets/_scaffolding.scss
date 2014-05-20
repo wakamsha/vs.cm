@@ -1,0 +1,46 @@
+// Scaffold
+// --------------------
+
+@font-face {
+	font-family: 'Conv_UQ_0';
+	src: url('../fonts/UQ_0.eot');
+	src: local('☺'), url('../fonts/UQ_0.woff') format('woff'), url('../fonts/UQ_0.ttf') format('truetype'), url('../fonts/UQ_0.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'misaki_gothic';
+	src: url('../fonts/misaki_gothic.eot');
+	src: local('☺'), url('../fonts/misaki_gothic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	background: $content-bg;
+	min-height: 100%;
+	// min-width: $container-width;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	font-family: Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+	-webkit-tap-highlight-color: transparent;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 320px;
+}
+
+
+@media (min-width: $screen-md) {
+	.container {
+		max-width: $screen-md;
+	}
+}

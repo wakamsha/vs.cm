@@ -1,0 +1,21 @@
+!!!
+%html
+	%head
+		%meta{charset: 'UTF-8'}
+		%meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes'}
+		%meta{name: 'apple-mobile-web-app-capable', content: 'yes'}
+		%meta{name: 'apple-mobile-web-app-status-bar-style', content: 'block'}
+		%title= current_page.data.title || "classmethod"
+		%link{rel: 'shortcut icon', href: 'favicon.ico', type: 'image/vnd.microsoft.icon'}
+		%link{rel: 'icon', href: 'favicon.ico', type: 'image/vnd.microsoft.icon'}
+		%link{rel: 'apple-touch-icon', href: 'apple-touch-icon.png'}
+		- if current_page.data.css
+			= stylesheet_link_tag current_page.data.css
+
+	%body{class: page_classes}
+		= yield
+
+		/ = javascript_include_tag 'all'
+		= javascript_include_tag "libs/modernizr.custom.71133.js", "libs/createjs-2013.12.12.min", "libs/socket.io", relative: true
+		- if current_page.data.js
+			= javascript_include_tag current_page.data.js

@@ -1,0 +1,23 @@
+@import "compass";
+
+html,
+body {
+	background-color: #171819;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	@include transform(translate3d(0,0,0));
+}
+
+#debug {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 0;
+	list-style: none;
+	> li {
+		float: left;
+	}
+}

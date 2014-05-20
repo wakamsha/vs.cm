@@ -1,0 +1,41 @@
+// Variables
+// --------------------
+
+// scaffold
+
+$content-bg: #eaeaea;
+$font-family-game: "Conv_UQ_0" ,Sans-Serif;
+$font-family-misaki: "misaki_gothic" ,Sans-Serif;
+
+
+
+// Button
+
+$button-size-base: 80px;
+$button-size-lg: ($button-size-base * 2) - 6;
+$button-size-sm: ($button-size-base * 0.6) - 4;
+$button-padding-bg: #c9c9c9;
+$button-padding-base: $button-size-base / 10;
+$button-padding-lg: $button-size-lg / 10;
+$button-padding-sm: $button-size-sm / 5;
+$btn-primary: #d50e0e;
+
+
+
+// Display
+
+$display-frame: #7d0315;
+$display-label: white;
+$display-label-border: #cca48d;
+
+
+// Score
+$walking-icon-size: 288px;
+$gauge-color: #d2688e;
+
+
+// Media queries breakpoints
+// --------------------
+$screen-xs: 320px !default;
+$screen-sm: 480px !default;
+$screen-md: 768px !default;

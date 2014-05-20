@@ -1,0 +1,100 @@
+{
+	"speakers": {
+		"vote0": {
+			"name": "CM　オオハシ",
+			"src": "cm_ohashi.jpg",
+			"title": "さいてんのれんしゅう" ,
+			"vote_target": "vote0"
+		},
+		"vote1": {
+			"name": "ヤフー　ヒラマツ",
+			"src": "yahoo_nishimatsu.jpg",
+			"title": "ＸＣｏｄｅ で　ばくそくかいはつ" ,
+			"vote_target": "vote1"
+		},
+		"vote2": {
+			"name": "CM　ヒライ",
+			"src": "cm_hirai.jpg",
+			"title": "ＸＣｏｄｅ プラグインで かいてきかいはつライフを" ,
+			"vote_target": "vote2"
+		},
+
+		"vote3": {
+			"name": "ヤフー　サノ",
+			"src": "yahoo_sano.jpg",
+			"title": "Ｏｂｊｅｃｔｉｖｅ−Ｃ をすきになるチップ＆ハック" ,
+			"vote_target": "vote3"
+		},
+		"vote4": {
+			"name": "CM　スワ",
+			"src": "cm_suwa.jpg",
+			"title": "ＸＣｏｄｅ ５ の Ａｓｓｅｔ　Ｃａｔａｌｏｇ にまつわる　いますぐつかえるＴｉｐｓしゅう" ,
+			"vote_target": "vote4"
+		},
+		
+		"vote5": {
+			"name": "ヤフー　ニシ",
+			"src": "yahoo_nishi.jpg",
+			"title": "あの パターンとなかよくつきあう" ,
+			"vote_target": "vote5"
+		},
+		"vote6": {
+			"name": "CM　カケガワ",
+			"src": "cm_kakegawa.jpg",
+			"title": "ｉＯＳ アプリ のメンテナンスせいをたかめるためのきほんてきなかんがえかた" ,
+			"vote_target": "vote6"
+		},
+		
+		"vote7": {
+			"name": "ヤフー　サトウ",
+			"src": "yahoo_sato.jpg",
+			"title": "アプリエンジニアの デザインに たいする　こころがまえ" ,
+			"vote_target": "vote7"
+		},
+		"vote8": {
+			"name": "CM　ヒラヤ",
+			"src": "cm_hiraya.jpg",
+			"title": "アプリデザイン はじめのいっぽ" ,
+			"vote_target": "vote8"
+		},
+		
+		"vote9": {
+			"name": "ヤフー　ハネダ",
+			"src": "yahoo_haneda.jpg",
+			"title": "ｉＢｅａｃｏｎ　プラグインとか" ,
+			"vote_target": "vote9"
+		},
+		"vote10": {
+			"name": "CM　アラカワ",
+			"src": "cm_arakawa.jpg",
+			"title": "ｉＢｅａｃｏｎ　ばくそくかいはつメソッド" ,
+			"vote_target": "vote10"
+		},
+		
+		"vote11": {
+			"name": "ヤフー　ツカコシ",
+			"src": "yahoo_tsukakoshi.jpg",
+			"title": "そのアプリ リジェクト されるってよ" ,
+			"vote_target": "vote11"
+		},
+		"vote12": {
+			"name": "CM　アダチ",
+			"src": "cm_adachi.jpg",
+			"title": "ユニットテスト しょがくしゃが Ｋｉｗｉひどうきテストでしっぱいしたはなし",
+			"vote_target": "vote12"
+		},
+		
+		"vote13": {
+			"name": "ヤフー　ヨシダ",
+			"src": "yahoo_yoshida.jpg",
+			"title": "Ａｐｐｌｅ のさきをいく ポストタッチインターフェース",
+			"vote_target": "vote13"
+		},
+		"vote14": {
+			"name": "CM　フカサワ",
+			"src": "cm_fukasawa.jpg",
+			"title": "ｉＯＳアプリ　かいはつのむこうがわ",
+			"vote_target": "vote14"
+		 }
+	}
+}

@@ -1,0 +1,32 @@
+---
+title: ヤフー vs クラスメソッド
+js: application
+css: vote
+---
+.container
+	.display-wrapper
+		#display.display
+			%canvas#vote-canvas
+			.status-container
+				%h2#speaker-name.title.font-misaki
+				%p#counter.counter.col 0000
+			#info.info.row
+				.info-inner
+					%ul#info-list.info-list
+						%li
+		%p.display-label classmethod
+
+	%ul#btn-group.btn-group
+		%li.btn.btn-lg<
+			= link_to '#', id: 'btn-a', class: '' do
+				%i.icon-like
+-#
+	%ul#debug-controllers.debug-controllers
+		%li<
+			%button#debug-change-speaker{type: 'button'} Change speaker
+		-#
+			%li<
+				%button#debug-disable-vote{type: 'button'} Disable vote
+		%li<
+			%button#debug-send-message{type: 'button'} Send message
+

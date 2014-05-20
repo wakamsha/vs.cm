@@ -1,0 +1,247 @@
+@import "compass";
+
+@import "variables";
+@import "mixins";
+@import "scaffolding";
+@import "display";
+@import "icons";
+@import "utilities";
+
+
+// Scaffolding
+// ----------
+body {
+	min-width: 880px;
+}
+
+// Display
+// ----------
+.display-wrapper {
+	margin: 13px 21px;
+}
+
+
+.team-icon {
+	position: absolute;
+	width: $walking-icon-size;
+	height: $walking-icon-size;
+	background: url(../images/icons.png) no-repeat;
+	background-size: $walking-icon-size * 3;
+	z-index: 1;
+	&.cm {
+		background-position: (-$walking-icon-size) (-$walking-icon-size);
+	}
+}
+
+
+// Score header
+// ----------
+.score-header {
+	color: white;
+	background: black;
+	font-family: $font-family-misaki;
+	padding: 8px 34px;
+	position: relative;
+
+	table {
+		> thead th,
+		> tbody td {
+			padding: 0 0 5px;
+			white-space: nowrap;
+		}
+		> thead {
+			th {
+				font-size: 34px;
+				padding-bottom: 8px;
+				&:first-child,
+				&:last-child {
+					width: 45%;
+				}
+				&:first-child {
+					text-align: left;
+				}
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+		> tbody {
+			td {
+				font-size: 32px;
+				white-space: nowrap;
+			}
+		}
+	}
+	.points {
+		font-size: 28px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		> li {
+			display: inline-block;
+			color: #999;
+			&.pull-left {
+				+ li {
+					margin-left: 8px;
+				}
+			}
+			&.pull-right {
+				+ li {
+					margin-right: 8px;
+				}
+			}
+			&.win {
+				color: $gauge-color;
+			}
+		}
+	}
+	.total-votes {
+		clear: both;
+		display: block;
+		font-family: $font-family-game;
+		padding-top: 13px;
+		font-size: 48px;
+	}
+}
+
+// Score wrapper
+// ----------
+.score-wrapper {
+	box-sizing: border-box;
+	display: table;
+	font-family: $font-family-game;
+	overflow: hidden;
+	padding: 13px 34px 21px;
+	position: relative;
+	width: 100%;
+
+	.team-icon {
+		width: $walking-icon-size;
+		height: $walking-icon-size;
+		background-size: $walking-icon-size * 3;
+		bottom: -5%;
+		opacity: .1;
+		left: -8%;
+		&.cm {
+			background-position: (-$walking-icon-size) (-$walking-icon-size);
+			left: auto;
+			right: -8%;
+		}
+	}
+}
+
+.table-score {
+	position: relative;
+	z-index: 2;
+	> thead {
+		th {
+			font-size: 64px;
+			padding-bottom: 21px;
+			&:first-child {
+				text-align: right;
+			}
+			&:last-child {
+				text-align: left;
+			}
+		}
+	}
+	> tbody {
+		> tr {
+			>td {
+				padding: 21px 0;
+				&:nth-child(4),
+				&:nth-child(5) {
+					text-align: right;
+				}
+				&.score {
+					font-family: $font-family-game;
+					font-size: 58px;
+					position: relative;
+					&:nth-child(6) {
+						&:after {
+							border-color: transparent transparent black transparent;
+							border-width: 0 0 5px 10px;
+							bottom: -2px;
+							left: -5px;
+						}
+					}
+				}
+				&.thumbnail {
+					padding: 5px;
+					img {
+						width: 48px;
+					}
+				}
+				&.title {
+					font-family: $font-family-misaki;
+					font-size: 18px;
+					padding: 0 55px;
+					text-align: center;
+					position: relative;
+					&:before,
+					&:after {
+						position: absolute;
+						content: "";
+						height: 0;
+						width: 0;
+						display: inline-block;
+						border-style: solid;
+						border-color: transparent;
+						top: 50%;
+						margin-top: -15px;
+					}
+					&:before {
+						border-width: 15px 30px 15px 20px;
+						left: -10px;
+					}
+					&:after {
+						border-width: 15px 20px 15px 30px;
+						right: -10px
+					}
+				}
+			}
+			&:nth-child(even) {
+				background: #eee;
+			}
+
+			&.yahoo {
+				> td {
+					&:nth-child(2) {
+						color: $gauge-color;
+					}
+					&:nth-child(5) {
+						&.thumbnail {
+							img {
+								opacity: .4;
+							}
+						}
+					}
+					&.title {
+						&:before {
+							border-color: transparent $gauge-color transparent transparent;
+						}
+					}
+				}
+			}
+			&.cm {
+				> td {
+					&:nth-child(4) {
+						color: $gauge-color;
+					}
+					&:nth-child(1) {
+						&.thumbnail {
+							img {
+								opacity: .4;
+							}
+						}
+					}
+					&.title {
+						&:after {
+							border-color: transparent transparent transparent $gauge-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}

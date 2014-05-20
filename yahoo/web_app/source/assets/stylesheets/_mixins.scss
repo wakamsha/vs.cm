@@ -1,0 +1,35 @@
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Score
+// --------------------
+@mixin winner {
+	&:after {
+		color: #f8b62b;
+		content: "\e603";
+		font-family: "icomoon";
+		font-size: 10em;
+		left: 50%;
+		margin-left: -.5em;
+		position: absolute;
+		text-shadow:
+			0 4px 0 black,
+			0 -4px 0 black,
+			4px 0 0 black,
+			-4px 0 0 black,
+			2px 3px 0 black,
+			-2px 3px 0 black,
+			2px -3px 0 black,
+			-2px -3px 0 black;
+		top: -.7em;
+	}
+}
