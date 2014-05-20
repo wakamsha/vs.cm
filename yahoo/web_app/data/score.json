@@ -1,0 +1,67 @@
+{
+	"sessions": [
+		{
+			"title": "開発スピード向上",
+			"challenger": "yahoo_nishimatsu.jpg",
+			"classmethod": "cm_hirai.jpg",
+			"scores": {
+				"yahoo": "13596",
+				"cm": "12906"
+			}
+		},
+		{
+			"title": "小ネタ集",
+			"challenger": "yahoo_sano.jpg",
+			"classmethod": "cm_suwa.jpg",
+			"scores": {
+				"yahoo": "5687",
+				"cm": "13106"
+			}
+		},
+		{
+			"title": "デザインパターン",
+			"challenger": "yahoo_nishi.jpg",
+			"classmethod": "cm_kakegawa.jpg",
+			"scores": {
+				"yahoo": "7646",
+				"cm": "15568"
+			}
+		},
+		{
+			"title": "デザイン",
+			"challenger": "yahoo_sato.jpg",
+			"classmethod": "cm_hiraya.jpg",
+			"scores": {
+				"yahoo": "15903",
+				"cm": "10398"
+			}
+		},
+		{
+			"title": "ｉＢｅａｃｏｎ",
+			"challenger": "yahoo_haneda.jpg",
+			"classmethod": "cm_arakawa.jpg",
+			"scores": {
+				"yahoo": "13023",
+				"cm": "16033"
+			}
+		},
+		{
+			"title": "失敗談/バッドノウハウ",
+			"challenger": "yahoo_tsukakoshi.jpg",
+			"classmethod": "cm_adachi.jpg",
+			"scores": {
+				"yahoo": "19267",
+				"cm": "15269"
+			}
+		},
+		{
+			"title": "フリーテーマ",
+			"challenger": "yahoo_yoshida.jpg",
+			"classmethod": "cm_fukasawa.jpg",
+			"scores": {
+				"yahoo": "30732",
+				"cm": "23088"
+			}
+		}
+	]
+}
