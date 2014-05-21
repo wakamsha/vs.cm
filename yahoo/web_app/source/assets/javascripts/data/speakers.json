@@ -1,7 +1,7 @@
 {
 	"speakers": {
 		"vote0": {
-			"name": "CM　オオハシ",
+			"name": "ＣＭ　オオハシ",
 			"src": "cm_ohashi.jpg",
 			"title": "さいてんのれんしゅう" ,
 			"vote_target": "vote0"
@@ -13,7 +13,7 @@
 			"vote_target": "vote1"
 		},
 		"vote2": {
-			"name": "CM　ヒライ",
+			"name": "ＣＭ　ヒライ",
 			"src": "cm_hirai.jpg",
 			"title": "ＸＣｏｄｅ プラグインで かいてきかいはつライフを" ,
 			"vote_target": "vote2"
@@ -26,7 +26,7 @@
 			"vote_target": "vote3"
 		},
 		"vote4": {
-			"name": "CM　スワ",
+			"name": "ＣＭ　スワ",
 			"src": "cm_suwa.jpg",
 			"title": "ＸＣｏｄｅ ５ の Ａｓｓｅｔ　Ｃａｔａｌｏｇ にまつわる　いますぐつかえるＴｉｐｓしゅう" ,
 			"vote_target": "vote4"
@@ -39,7 +39,7 @@
 			"vote_target": "vote5"
 		},
 		"vote6": {
-			"name": "CM　カケガワ",
+			"name": "ＣＭ　カケガワ",
 			"src": "cm_kakegawa.jpg",
 			"title": "ｉＯＳ アプリ のメンテナンスせいをたかめるためのきほんてきなかんがえかた" ,
 			"vote_target": "vote6"
@@ -52,7 +52,7 @@
 			"vote_target": "vote7"
 		},
 		"vote8": {
-			"name": "CM　ヒラヤ",
+			"name": "ＣＭ　ヒラヤ",
 			"src": "cm_hiraya.jpg",
 			"title": "アプリデザイン はじめのいっぽ" ,
 			"vote_target": "vote8"
@@ -65,7 +65,7 @@
 			"vote_target": "vote9"
 		},
 		"vote10": {
-			"name": "CM　アラカワ",
+			"name": "ＣＭ　アラカワ",
 			"src": "cm_arakawa.jpg",
 			"title": "ｉＢｅａｃｏｎ　ばくそくかいはつメソッド" ,
 			"vote_target": "vote10"
@@ -78,7 +78,7 @@
 			"vote_target": "vote11"
 		},
 		"vote12": {
-			"name": "CM　アダチ",
+			"name": "ＣＭ　アダチ",
 			"src": "cm_adachi.jpg",
 			"title": "ユニットテスト しょがくしゃが Ｋｉｗｉひどうきテストでしっぱいしたはなし",
 			"vote_target": "vote12"
@@ -91,7 +91,7 @@
 			"vote_target": "vote13"
 		},
 		"vote14": {
-			"name": "CM　フカサワ",
+			"name": "ＣＭ　フカサワ",
 			"src": "cm_fukasawa.jpg",
 			"title": "ｉＯＳアプリ　かいはつのむこうがわ",
 			"vote_target": "vote14"

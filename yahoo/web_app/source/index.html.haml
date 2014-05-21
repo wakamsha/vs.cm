@@ -1,19 +1,20 @@
 ---
 title: ヤフー vs クラスメソッド
-js: application
+js: Application
 css: vote
 ---
 .container
 	.display-wrapper
 		#display.display
-			%canvas#vote-canvas
-			.status-container
-				%h2#speaker-name.title.font-misaki
-				%p#counter.counter.col 0000
-			#info.info.row
-				.info-inner
-					%ul#info-list.info-list
-						%li
+			%canvas#main-canvas
+			-#
+				.status-container
+					%h2#speaker-name.title.font-misaki
+					%p#counter.counter.col 0000
+				#info.info.row
+					.info-inner
+						%ul#info-list.info-list
+							%li
 		%p.display-label classmethod
 
 	%ul#btn-group.btn-group

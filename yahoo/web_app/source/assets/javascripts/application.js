@@ -60,38 +60,38 @@ var handleInitialLoadComplete = function(event) {
 	});
 
 	// init socketio
-	app.socketio = new SocketIO({
-		// url: 'http://54.199.157.61:8881/hostname',
-		// url: 'http://ws.rt.classmethod.jp/hostname',
-		url: settings.socketio.baseURL + 'hostname',
-		interval: 1200
-	});
-	app.socketio.subscribe('segment.get', function(event) {
-		// console.log('segment取得成功');
-		var segmentData = app.socketio.segmentData;
-		// 活性・非活性
-		if (segmentData.vote_status !== 'on') {
-			disableVote();
-			app.count.clearCount();
-		} else {
-			app.btnAction.removeClass('disable');
-			var display = document.getElementById('display'),
-				container = document.getElementById('alert');
-			if (container) {
-				display.removeChild(container);
-			}
-		}
-		// スピーカー交代
-		if (app.currentVoteTarget !== segmentData.vote_target) {
-			app.currentVoteTarget = segmentData.vote_target;
-			if (!app.isInitial) {
-				app.count.clearCount();
-			} else {
-				app.isInitial = false;
-			}
-			updateSpeaker();
-		}
-	});
+	// app.socketio = new SocketIO({
+	// 	// url: 'http://54.199.157.61:8881/hostname',
+	// 	// url: 'http://ws.rt.classmethod.jp/hostname',
+	// 	url: settings.socketio.baseURL + 'hostname',
+	// 	interval: 1200
+	// });
+	// app.socketio.subscribe('segment.get', function(event) {
+	// 	// console.log('segment取得成功');
+	// 	var segmentData = app.socketio.segmentData;
+	// 	// 活性・非活性
+	// 	if (segmentData.vote_status !== 'on') {
+	// 		disableVote();
+	// 		app.count.clearCount();
+	// 	} else {
+	// 		app.btnAction.removeClass('disable');
+	// 		var display = document.getElementById('display'),
+	// 			container = document.getElementById('alert');
+	// 		if (container) {
+	// 			display.removeChild(container);
+	// 		}
+	// 	}
+	// 	// スピーカー交代
+	// 	if (app.currentVoteTarget !== segmentData.vote_target) {
+	// 		app.currentVoteTarget = segmentData.vote_target;
+	// 		if (!app.isInitial) {
+	// 			app.count.clearCount();
+	// 		} else {
+	// 			app.isInitial = false;
+	// 		}
+	// 		updateSpeaker();
+	// 	}
+	// });
 };
 
 var tick = function() {
