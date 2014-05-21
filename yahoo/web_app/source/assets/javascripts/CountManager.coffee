@@ -1,4 +1,4 @@
-class window.CountManager
+class window.CountManager extends createjs.Container
 
 	_keyName = ''
 	_countValue = 1
@@ -11,6 +11,7 @@ class window.CountManager
 	_stage = null
 
 	constructor: (args)->
+		@initialize()
 		_keyName = args.keyName
 		_countValue = args.countValue
 		_stage = args.stage
@@ -20,6 +21,7 @@ class window.CountManager
 			localDataObj = JSON.parse localData
 			_currentCount = localDataObj.count
 
+		createBackground.call @, args.backgroundImage
 		createCounter.call @
 		updateCounter.call @
 
@@ -39,12 +41,20 @@ class window.CountManager
 		catch error
 			console.log error
 
+	createBackground = (img)->
+		bmp = new createjs.Bitmap img
+		bmp.regX = bmp.image.width
+		bmp.x = _stage.canvas.width - 20
+		bmp.y = 24
+		_stage.addChild bmp
+		@
+
 	createCounter = ->
 		_counter = new createjs.Text '', "bold #{_fontSize} #{_fontFamily}", _color
 		_counter.textAlign = 'right'
-		_counter.x = _stage.canvas.width - 50
-		_counter.y = 60
-		_stage.addChild _counter
+		_counter.x = _stage.canvas.width - 40
+		_counter.y = 50
+		@addChild _counter
 
 	updateCounter = ->
 		tmpStr = _currentCount.fillZero 3

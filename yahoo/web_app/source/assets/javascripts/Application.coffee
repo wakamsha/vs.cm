@@ -2,7 +2,6 @@
 //= require StringEx
 //= require EventObserver
 //= require Button
-//= require Count
 //= require CountManager
 //= require Device
 //= require InfoManager
@@ -12,13 +11,15 @@
 //= require settings
 
 
-countManager = null
-device  = null
-infoManager = null
-queue   = null
-speakerManager = null
-stage   = null
-scale   = 1
+countManager    = null
+device          = null
+infoManager     = null
+queue           = null
+speakerManager  = null
+stage           = null
+scale           = 1
+socketio        = null
+
 
 handleClickButton = (event)->
 	console.log 'button clicked'
@@ -36,6 +37,8 @@ initCount = ->
 		keyName: 'vs_cm'
 		countValue: 1
 		stage: stage
+		backgroundImage: queue.getResult 'counter-bg'
+	stage.addChild countManager
 
 initConnect = ->
 
@@ -100,11 +103,13 @@ initLoad = ->
 
 	# load assets
 	manifest = [
-		{ id: 'soundVote', src: './assets/b_071.mp3' }
+		{ id: 'soundVote', src: './assets/audio/b_071.m4a' }
+		{ id: 'counter-bg', src: './assets/images/bg-counter.png' }
 		{ id: 'speakersData', src: './assets/javascripts/data/speakers.json' }
 	]
 	queue = new createjs.LoadQueue true
 	queue.installPlugin createjs.Sound
+	createjs.Sound.alternateExtensions = ['mp3'];
 	queue.addEventListener 'complete', handleInitialLoadComplete
 	queue.loadManifest manifest, true
 	@
